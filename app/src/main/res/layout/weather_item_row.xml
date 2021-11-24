@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="data"
+            type="com.app.weatherprj.pojo.WeatherResPojo.List" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="5dp"
+        android:layout_margin="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.main.temp}"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.weather.get(0).description}"
+                android:textSize="14dp"
+                android:textColor="@color/grey"
+                android:layout_marginTop="5dp"
+                android:textStyle="normal" />
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView android:id="@+id/tvWeatherType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/purple_700"
+                android:textSize="14dp"
+                android:textStyle="normal"
+                android:layout_margin="5dp"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
